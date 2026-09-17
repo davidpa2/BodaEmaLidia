@@ -1,0 +1,42 @@
+.styledHR, .simpleHR {
+    position: relative;
+    border: none;
+    height: 20px;
+    background: transparent;
+    text-align: center;
+    overflow: visible;
+    width: 50%;
+}
+
+.simpleHR::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #cc926b;
+}
+
+.styledHR::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #cc926b;
+    /* Color de la línea */
+}
+
+.styledHR::after {
+    content: attr(data-emoji);
+    position: relative;
+    display: inline-block;
+    padding: 0 6px;
+    bottom: 6px;
+    background-color: #f5f1e5;
+    /* Debe coincidir con el fondo de tu página */
+    font-size: 22px;
+}
+
