@@ -17,6 +17,8 @@ export class Countdown {
   seconds: number = 0;
 
   ngOnInit(): void {
+    this.updateCountdown();
+    
     this.subscription = interval(1000).subscribe(() => {
       this.updateCountdown();
     });
