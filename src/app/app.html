@@ -1,14 +1,13 @@
-<div style="display: flex; flex-direction: column; align-items: center;">
-  <div
-    style=" width: 95vw; background-image: url(/wedding-header.jpg);  background-repeat: no-repeat; background-size: cover;">
+<div id="mainContainer">
+  <div id="headerImage">
     <!-- tarjeta info cabecera -->
-    <div style="width: 100%; display: flex; justify-content: center; align-items: center; height: 100%;">
-  
-      <div style="background-color: #f5f1e5; width: 80%; text-align: center; border: 0.1px solid #f5f1e5; background-color: transparent; padding: 4px; margin: 35px 0">
+    <div id="invitationCard">
+
+      <div id="invitationCardLayout">
         <div style="background-color: #f5f1e5; padding: 25px 15px;">
 
           <div class="playfair-display-500" style="font-size: 50px;">¡Nos Casamos!</div>
-          
+
           <hr class="styledHR" data-emoji="♡">
 
           <div class="great-vibes-regular" style="font-size: 40px;">Emanuel & Lidia</div>
@@ -20,16 +19,22 @@
           <div>Hacienda El Arenoso</div>
 
           <hr class="simpleHR">
-          
-          <div style="font-weight: 600; font-size: larger; color: rgb(68, 67, 65);" class="">¡Faltan {{diasRestantes}} días!</div> 
-    
+
+          <!-- <div style="font-weight: 600; font-size: larger; color: rgb(68, 67, 65);" class="">¡Faltan {{diasRestantes}} días!</div>  -->
+
+          <app-countdown></app-countdown>
         </div>
       </div>
     </div>
   </div>
-  
-  <div style="background-color: #f5f1e5; height: 800px; width: 95vw">
-  
+
+  <div style="background-color: #f5f1e5; height: 800px; width: 95vw; ">
+    <div style="display: flex; justify-content: center;">
+      
+      <div class="playfair-display-500" style="font-size: 25px; margin-top: 15px">La Celebración</div>
+
+    </div>
+
+    <app-wedding-program></app-wedding-program>
   </div>
 </div>
-

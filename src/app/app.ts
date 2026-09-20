@@ -1,9 +1,11 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { WeddingProgram } from './components/wedding-program/wedding-program';
+import { Countdown } from './components/countdown/countdown';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, WeddingProgram, Countdown],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
