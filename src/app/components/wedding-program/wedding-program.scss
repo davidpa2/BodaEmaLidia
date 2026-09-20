@@ -1,0 +1,40 @@
+.weddingProgram {
+    height: 500px;
+    // width: 35%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    justify-self: center;
+}
+
+.mainSection {
+    display: grid;
+    align-items: center;
+
+    .textContainer>div {
+        justify-self: center;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        img {
+            width: 35px;
+            margin-left: -60px;
+        }
+    }
+}
+
+
+#relativeDots {
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    height: 500px;
+    color: #92a68b;
+    font-size: 20px;
+}
+
+#dotsLine {
+    border: solid 1.5px #444441;
+    height: 100%;
+    margin-right: 70px;
+}
