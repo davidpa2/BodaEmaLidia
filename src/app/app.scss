@@ -71,3 +71,18 @@
     /* Debe coincidir con el fondo de tu página */
     font-size: 22px;
 }
+
+.section {
+    height: 650px;
+    width: 95vw;
+}
+
+.sectionTitle {
+    font-size: 25px;
+    margin-top: 15px
+}
+
+.sectionCentered {
+    display: flex;
+    justify-content: center;
+}
