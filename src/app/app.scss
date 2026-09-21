@@ -9,6 +9,8 @@
     background-image: url("/wedding-header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
 }
 
 #invitationCard {
@@ -37,7 +39,7 @@
     background: transparent;
     text-align: center;
     overflow: visible;
-    width: 50%;
+    width: 80%;
 }
 
 .simpleHR::before {
@@ -85,4 +87,29 @@
 .sectionCentered {
     display: flex;
     justify-content: center;
+}
+
+
+
+@media screen and (width >=800px) {
+    #invitationCard {
+        width: 700px;
+    }
+
+    .styledHR,
+    .simpleHR {
+        width: 50%;
+    }
+
+}
+
+@media screen and (800px >=width >=650px) {
+    #invitationCard {
+        width: 50%
+    }
+
+    .styledHR,
+    .simpleHR {
+        width: 65%;
+    }
 }
