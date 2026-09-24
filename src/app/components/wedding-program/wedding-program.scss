@@ -1,3 +1,5 @@
+@use '../../../variables.scss' as vars;
+
 .weddingProgram {
     height: 500px;
     // width: 35%;
@@ -29,11 +31,11 @@
     right: 50%;
     left: 50%;
     height: 500px;
-    color: #92a68b;
+    color: vars.$green;
     font-size: 20px;
 }
 
 #dotsLine {
-    border: solid 1.5px #444441;
+    border: solid 1.5px vars.$darkBrown;
     margin-right: 25px;
 }

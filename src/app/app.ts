@@ -2,10 +2,11 @@ import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { WeddingProgram } from './components/wedding-program/wedding-program';
 import { Countdown } from './components/countdown/countdown';
+import { AssistanceForm } from './components/assistance-form/assistance-form';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, WeddingProgram, Countdown],
+  imports: [RouterOutlet, WeddingProgram, Countdown, AssistanceForm],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
