@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AmbientAudioService } from './services/ambient-audio.service';
-import { HeaderComponent } from './components/header/hero.component';
+import { HeaderComponent } from './components/header/header.component';
 import { AssistanceFormComponent } from './components/assistance-form/assistance-form.component';
 import { WeddingTimelineComponent } from './components/wedding-timeline/wedding-timeline.component';
 
