@@ -1,0 +1,48 @@
+@if (isOpen()) {
+      <div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-alabaster rounded-3xl max-w-lg w-full p-6 sm:p-10 shadow-2xl border border-sandstone relative max-h-[92vh] overflow-y-auto">
+          
+          <button (click)="close.emit()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-crema hover:bg-sandstone flex items-center justify-center text-charcoal transition">
+            ✕
+          </button>
+
+          <div class="text-center mb-6">
+            <span class="text-[11px] uppercase tracking-[0.3em] font-sans text-gold-dark font-semibold">R.S.V.P.</span>
+            <h3 class="font-serif text-3xl text-olive-900 mt-1">Confirmar Asistencia</h3>
+            <p class="font-serif italic text-xs sm:text-sm text-charcoal/70 mt-1">
+              Por favor, confirma antes del 15 de Septiembre de 2026.
+            </p>
+          </div>
+
+          <form (submit)="onSubmit($event)" class="space-y-4 text-xs">
+            <div>
+              <label class="block uppercase font-sans tracking-wider font-semibold text-charcoal/80 mb-1">Nombre Completo *</label>
+              <input type="text" required [value]="name()" (input)="name.set($any($event.target).value)" placeholder="Ej. Beatriz Morales" class="w-full px-4 py-3 rounded-xl bg-white border border-sandstone focus:border-olive focus:outline-none text-charcoal text-sm">
+            </div>
+
+            <div>
+              <label class="block uppercase font-sans tracking-wider font-semibold text-charcoal/80 mb-1">¿Asistirás al enlace? *</label>
+              <div class="grid grid-cols-2 gap-3">
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-sandstone bg-white cursor-pointer">
+                  <input type="radio" name="att" [checked]="attending() === 'si'" (change)="attending.set('si')">
+                  <span class="font-medium text-olive-900">Sí, asistiré</span>
+                </label>
+                <label class="flex items-center gap-2 p-3 rounded-xl border border-sandstone bg-white cursor-pointer">
+                  <input type="radio" name="att" [checked]="attending() === 'no'" (change)="attending.set('no')">
+                  <span class="font-medium text-charcoal/70">No podré asistir</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label class="block uppercase font-sans tracking-wider font-semibold text-charcoal/80 mb-1">Alergias o Restricciones</label>
+              <input type="text" placeholder="Celíaco, vegetariano, intolerancia a la lactosa..." class="w-full px-4 py-3 rounded-xl bg-white border border-sandstone focus:border-olive focus:outline-none text-charcoal text-sm">
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-full bg-olive-700 hover:bg-olive-800 text-alabaster font-sans uppercase tracking-widest font-semibold transition shadow-md">
+              Enviar Confirmación
+            </button>
+          </form>
+        </div>
+      </div>
+    }

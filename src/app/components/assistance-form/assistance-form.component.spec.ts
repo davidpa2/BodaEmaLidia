@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Countdown } from './countdown';
+import { AssistanceFormComponent } from './assistance-form.component';
 
-describe('Countdown', () => {
-  let component: Countdown;
-  let fixture: ComponentFixture<Countdown>;
+describe('AssistanceFormComponent', () => {
+  let component: AssistanceFormComponent;
+  let fixture: ComponentFixture<AssistanceFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Countdown]
+      imports: [AssistanceFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Countdown);
+    fixture = TestBed.createComponent(AssistanceFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

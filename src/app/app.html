@@ -1,63 +1,50 @@
-<div id="mainContainer">
-  <div id="headerImage">
-    <!-- tarjeta info cabecera -->
-    <div id="invitationCard">
+<div class="min-h-screen bg-alabaster text-charcoal font-sans">
+      
+      <nav class="sticky top-0 z-40 bg-alabaster/90 backdrop-blur-md border-b border-sandstone/70 px-6 h-20 flex items-center justify-between">
+        <a href="#" class="font-serif tracking-widest text-base font-semibold text-olive uppercase">
+          E <span class="text-gold italic font-normal text-lg">&amp;</span> L
+        </a>
 
-      <div id="invitationCardLayout">
-        <div style="background-color: #f5f1e5; padding: 25px 15px;">
-
-          <div class="playfair-display-500" style="font-size: 50px;">¡Nos Casamos!</div>
-
-          <hr class="styledHR" data-emoji="♡">
-
-          <div class="great-vibes-regular" style="font-size: 40px;">Emanuel & Lidia</div>
-          <div>¡Estamos muy ilusionados de invitaros a nuestra boda!</div>
-
-          <hr class="simpleHR">
-
-          <div>27 de AGOSTO de 2027</div>
-          <div>Hacienda El Arenoso</div>
-
-          <hr class="simpleHR">
-
-          <!-- <div style="font-weight: 600; font-size: larger; color: rgb(68, 67, 65);" class="">¡Faltan {{diasRestantes}} días!</div>  -->
-
-          <app-countdown></app-countdown>
+        <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest text-charcoal/80 font-medium">
+          <a href="#historia" class="hover:text-gold transition">Historia</a>
+          <a href="#itinerario" class="hover:text-gold transition">Itinerario</a>
+          <a href="#hacienda" class="hover:text-gold transition">La Hacienda</a>
         </div>
+
+        <div class="flex items-center gap-3">
+          <button (click)="audio.toggle()" class="px-3.5 py-1.5 rounded-full border border-gold/40 text-xs text-olive font-medium flex items-center gap-1.5 hover:bg-gold/10 transition">
+            <span>{{ audio.isPlaying() ? 'Pausar Música' : 'Música Andaluza' }}</span>
+          </button>
+          <button (click)="isRsvpOpen.set(true)" class="px-4 py-2 rounded-full bg-olive-700 text-alabaster text-xs uppercase tracking-widest font-semibold hover:bg-olive-800 transition">
+            RSVP
+          </button>
+        </div>
+      </nav>
+
+      <app-header (openRsvp)="isRsvpOpen.set(true)" />
+      
+      <section id="historia" class="py-24 px-6 max-w-4xl mx-auto text-center">
+        <span class="text-xs uppercase tracking-[0.3em] font-sans text-olive font-semibold">Nuestra Historia</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-olive-900 mt-2 mb-6 font-light">Siete primaveras y un destino</h2>
+        <p class="font-serif italic text-charcoal/80 text-lg leading-relaxed max-w-2xl mx-auto">
+          "Nos conocimos en Sevilla hace siete primaveras, y desde entonces cada rincón de Andalucía ha sido testigo de nuestras risas, sueños compartidos y el compromiso que hoy consagramos."
+        </p>
+      </section>
+
+      <app-wedding-timeline />
+
+      <!-- Floating RSVP Button -->
+      <div class="fixed bottom-6 right-6 z-40">
+        <button (click)="isRsvpOpen.set(true)" class="px-6 py-3.5 bg-olive-700 hover:bg-olive-800 text-alabaster rounded-full shadow-floating border border-gold/40 flex items-center gap-3 transition">
+          <span class="w-2.5 h-2.5 rounded-full bg-gold animate-ping"></span>
+          <span class="font-sans text-xs uppercase tracking-widest font-semibold text-gold-light">Confirmar Asistencia</span>
+        </button>
       </div>
-    </div>
-  </div>
 
-  <!-- Celebracion -->
-  <div style="background-color: #f5f1e5;" class="section">
-    <div class="sectionCentered" style=" margin-top:25px">
-      <div class="playfair-display-500 sectionTitle">La Celebración</div>
-    </div>
-    <app-wedding-program></app-wedding-program>
-  </div>
+      <app-assistance-form 
+        [isOpen]="isRsvpOpen()"
+        (close)="isRsvpOpen.set(false)"
+        (submitted)="onRsvpSubmitted($event)"
+      />
 
-  <!-- Logistica -->
-  <div class="section" style="background-color:#b6bfab"> <!--#b6bfab ; #ddd6ca-->
-    <div class="sectionCentered" style=" margin-top:25px; margin-bottom: 35px">
-      <div class="playfair-display-500 sectionTitle">Logística</div>
     </div>
-    <div class="sectionCentered">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3177.8275553168505!2d-5.948865923716038!3d37.20432514481434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1276e37dff7afd%3A0x38a98fba94c4b2d5!2sHacienda%20el%20Arenoso!5e0!3m2!1ses!2ses!4v1790007418056!5m2!1ses!2ses" width="90%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-    </div>
-  </div>
-  
-  <!-- Regalos -->
-  <div class="section" style="background-color:#ddd6ca">
-    <div class="" style=" margin-top:25px; margin-bottom: 35px; display: flex;
-    justify-content: center; flex-direction: column; align-items: center; padding: 0 20px; text-align: center;">
-      <div class="playfair-display-500 sectionTitle" style="margin-bottom: 20px;">Nuestra Nueva Aventura</div>
-      <div>Vuestra presencia es el mejor regalo, pero si queréis ayudarnos a empezar esta aventura juntos...</div>
-      <button>Ver detalle</button>
-    </div>
-  </div>
-
-  <!-- Confirmacion asistencia subyugao -->
-  <div class="section" style="background-color:#ddd6ca">
-    <app-assistance-form></app-assistance-form>
-  </div>
-</div>

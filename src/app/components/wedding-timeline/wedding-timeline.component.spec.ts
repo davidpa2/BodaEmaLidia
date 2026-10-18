@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AssistanceForm } from './assistance-form';
+import { WeddingTimelineComponent } from './wedding-timeline.component';
 
-describe('AssistanceForm', () => {
-  let component: AssistanceForm;
-  let fixture: ComponentFixture<AssistanceForm>;
+describe('WeddingTimelineComponent', () => {
+  let component: WeddingTimelineComponent;
+  let fixture: ComponentFixture<WeddingTimelineComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AssistanceForm]
+      imports: [WeddingTimelineComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AssistanceForm);
+    fixture = TestBed.createComponent(WeddingTimelineComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

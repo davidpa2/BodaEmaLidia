@@ -1,34 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@use 'variables.scss' as *;
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    background-color: $green;
-    margin: 0;
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #FAF7F2;
+  color: #1E1F1D;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.great-vibes-regular {
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-style: normal;
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A880;
+  border-radius: 9999px;
 }
 
-
-.playfair-display-500 { //¡Nos Casamos!, La Celebración, Confirmación de Asistencia y Un Detalle
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-.montserrat-400 {// textos explicativos, etiquetas del formulario (Nombre, ¿Vendrás?), datos del IBAN y botones de acción
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+.andalusian-glow {
+  background: 
+    radial-gradient(ellipse at 70% 20%, rgba(243, 215, 175, 0.45) 0%, rgba(200, 109, 81, 0.18) 35%, transparent 70%),
+    radial-gradient(ellipse at 20% 80%, rgba(61, 82, 64, 0.42) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(250, 247, 242, 0.4) 0%, rgba(244, 239, 230, 0.88) 70%, #FAF7F2 100%);
 }
