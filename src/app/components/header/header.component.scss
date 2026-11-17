@@ -1,0 +1,18 @@
+#header {
+    background-image: url('/header.jpeg');
+    background-position: 60% 40%;
+}
+
+@media screen and (max-width: 1500px) {
+    #header {
+        background-image: url('/header.jpeg');
+        background-position: 25% 40%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #header {
+        background-image: url('/header 2.jpeg');
+        background-position: center;
+    }
+}
